@@ -34,6 +34,8 @@ function calculateStats(playerId, gamesData) {
 	const totalWinsPoints = playerStats.wins * winPoints;
 	const totalLossesPoints = playerStats.losses * lossPoints;
 	playerStats.points = totalWinsPoints - totalLossesPoints + initialPoints;
+	playerStats.pointsPerGames = Math.round(playerStats.points / playerStats.totalGames);
+	playerStats.winPercent = parseFloat(((playerStats.wins / playerStats.totalGames) * 100).toFixed(2));
 
 	return playerStats;
 }
@@ -46,7 +48,8 @@ const pointsConfig = {
 
 const playerStatistics = users.map(user => calculateStats(user.id, gamesData));
 playerStatistics.sort((a, b) => b.points - a.points);
-console.log(playerStatistics);
+// playerStatistics.sort((a, b) => b.performance - a.performance);
+console.log('playerStatistics => ', playerStatistics);
 
 
 function createDataTable(elementId, data, columns) {
@@ -67,6 +70,8 @@ createDataTable('#ttStats', playerStatistics,
 		// { title: 'ID', field: 'id' },
 		{ title: 'Nome', field: 'name' }, // Se quiser manter a coluna "ID" no final, você pode deixá-la aqui
 		{ title: 'Pts', field: 'points' },
+		{ title: 'Pts/J', field: 'pointsPerGames' },
+		{ title: '%V', field: 'winPercent' },
 		{ title: 'V', field: 'wins' },
 		{ title: 'D', field: 'losses' },
 		{ title: 'J', field: 'totalGames' },
@@ -104,6 +109,23 @@ let elems = gamesData.map(game => {
 });
 
 document.querySelector('#ttHistory ol').innerHTML = elems.join('');
+
+
+
+function calculateMatchStats(playerRating, opponentRating) {	//Order of args matters !
+
+	const expectedScore = 1 / (1 + 10 ** ((opponentRating - playerRating) / 400))	// the expectated score for player A acording to ELO system;
+
+	const k = 32;	// scaling factor
+	const scoreChange = { win: k * (1 - expectedScore), loss: -k * expectedScore }
+
+	return scoreChange;
+}
+
+console.log('calculateMatchStats(2000,1700) => ', calculateMatchStats(100, 100));
+
+
+
 
 
 
