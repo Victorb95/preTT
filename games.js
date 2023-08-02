@@ -39,12 +39,8 @@ function calculateStats(playerId, gamesData) {
 	const totalWinsPoints = playerStats.wins * winPoints;
 	const totalLossesPoints = playerStats.losses * lossPoints;
 	playerStats.points = totalWinsPoints - totalLossesPoints + initialPoints;
-	playerStats.pointsPerGames = Math.round(playerStats.points / playerStats.totalGames);
+	playerStats.setsRate = parseFloat((playerStats.setsWon / playerStats.totalGames).toFixed(2));
 	playerStats.winRate = parseFloat(((playerStats.wins / playerStats.totalGames) * 100).toFixed(2));
-
-
-
-
 
 	return playerStats;
 }
@@ -87,8 +83,8 @@ createDataTable('#ttStats', playerStatistics,
 		// { title: 'ID', field: 'id' },
 		{ title: 'Nome', field: 'name' }, // Se quiser manter a coluna "ID" no final, você pode deixá-la aqui
 		{ title: 'Pts', field: 'points' },
-		{ title: 'Pts/J', field: 'winRate' },
-		{ title: '%V', field: 'winPercent' },
+		{ title: '%V', field: 'winRate' },
+		{ title: 'S/J', field: 'setsRate' },
 		{ title: 'V', field: 'wins' },
 		{ title: 'D', field: 'losses' },
 		{ title: 'J', field: 'totalGames' },
