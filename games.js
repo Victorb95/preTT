@@ -11,8 +11,12 @@ function calculateStats(playerId, gamesData) {
 		if (playerIndex !== -1) {
 			const setsWon = game.sets.filter(set => set[`player${playerIndex}`] > set[`player${1 - playerIndex}`]).length;
 			const setsLost = game.sets.length - setsWon;
+			const setDiff = Math.abs(setsWon - setsLost);
+			const isWin = setsWon > setsLost;
+			// calculateMatchStats(stats.rating,)
 
-			stats.totalGames++;
+			stats.rating +
+				stats.totalGames++;
 			stats.setsWon += setsWon;
 			stats.setsLost += setsLost;
 			stats.wins += setsWon > setsLost ? 1 : 0;
@@ -23,6 +27,7 @@ function calculateStats(playerId, gamesData) {
 	}, {
 		id: player.id,
 		name: player.name,
+		rating: pointsConfig.initialPoints,
 		wins: 0,
 		losses: 0,
 		totalGames: 0,
@@ -35,9 +40,22 @@ function calculateStats(playerId, gamesData) {
 	const totalLossesPoints = playerStats.losses * lossPoints;
 	playerStats.points = totalWinsPoints - totalLossesPoints + initialPoints;
 	playerStats.pointsPerGames = Math.round(playerStats.points / playerStats.totalGames);
-	playerStats.winPercent = parseFloat(((playerStats.wins / playerStats.totalGames) * 100).toFixed(2));
+	playerStats.winRate = parseFloat(((playerStats.wins / playerStats.totalGames) * 100).toFixed(2));
+
+
+
+
 
 	return playerStats;
+}
+
+
+function calculateBasicRanking(playerStats) {
+	const { initialPoints, winPoints, lossPoints } = pointsConfig;
+	const totalWinsPoints = playerStats.wins * winPoints;
+	const totalLossesPoints = playerStats.losses * lossPoints;
+
+	return totalWinsPoints - totalLossesPoints + initialPoints;
 }
 
 const pointsConfig = {
@@ -48,7 +66,6 @@ const pointsConfig = {
 
 const playerStatistics = users.map(user => calculateStats(user.id, gamesData));
 playerStatistics.sort((a, b) => b.points - a.points);
-// playerStatistics.sort((a, b) => b.performance - a.performance);
 console.log('playerStatistics => ', playerStatistics);
 
 
@@ -70,7 +87,7 @@ createDataTable('#ttStats', playerStatistics,
 		// { title: 'ID', field: 'id' },
 		{ title: 'Nome', field: 'name' }, // Se quiser manter a coluna "ID" no final, você pode deixá-la aqui
 		{ title: 'Pts', field: 'points' },
-		{ title: 'Pts/J', field: 'pointsPerGames' },
+		{ title: 'Pts/J', field: 'winRate' },
 		{ title: '%V', field: 'winPercent' },
 		{ title: 'V', field: 'wins' },
 		{ title: 'D', field: 'losses' },
@@ -110,19 +127,40 @@ let elems = gamesData.map(game => {
 
 document.querySelector('#ttHistory ol').innerHTML = elems.join('');
 
-
-
 function calculateMatchStats(playerRating, opponentRating) {	//Order of args matters !
 
 	const expectedScore = 1 / (1 + 10 ** ((opponentRating - playerRating) / 400))	// the expectated score for player A acording to ELO system;
 
 	const k = 32;	// scaling factor
-	const scoreChange = { win: k * (1 - expectedScore), loss: -k * expectedScore }
+
+	const customLossFactor = {
+		diff_1set: 0.7,
+		diff_2set: 0.85,
+	}
+	const customWinFactor = {
+		diff_2set: 1.15,
+		diff_3set: 1.3,
+	}
+
+	const scoreChange = {
+		win: [
+			k * (1 - expectedScore),
+			(k * (1 - expectedScore)) * customWinFactor.diff_2set,
+			(k * (1 - expectedScore)) * customWinFactor.diff_3set,
+		],
+		loss: [
+			-k * expectedScore,
+			(-k * expectedScore) * customLossFactor.diff_2set,
+			(-k * expectedScore) * customLossFactor.diff_1set
+		]
+	}
 
 	return scoreChange;
 }
 
-console.log('calculateMatchStats(2000,1700) => ', calculateMatchStats(100, 100));
+
+
+console.log('calculateMatchStats(100,100) => ', calculateMatchStats(100, 100));
 
 
 

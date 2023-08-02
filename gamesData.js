@@ -1,23 +1,23 @@
 const users = [
-	{ id: 1, name: 'Edson' },
-	{ id: 2, name: 'Hélio' },
-	{ id: 3, name: 'Ylem' },
-	{ id: 4, name: 'Francisco' },
-	{ id: 5, name: 'Hugo' },
-	{ id: 6, name: 'João' },
-	{ id: 7, name: 'Leonardo' },
-	{ id: 8, name: 'Julia' },
-	{ id: 9, name: 'Henrique' },
-	{ id: 10, name: 'Daniel' },
-	{ id: 11, name: 'Victor' },
-	{ id: 12, name: 'Angela' },
-	{ id: 13, name: 'Fernando' },
-	{ id: 14, name: 'Harley' },
+	{ id: 1, name: 'Edson', rating: 100 },
+	{ id: 2, name: 'Hélio', rating: 100 },
+	{ id: 3, name: 'Ylem', rating: 100 },
+	{ id: 4, name: 'Francisco', rating: 100 },
+	{ id: 5, name: 'Hugo', rating: 100 },
+	{ id: 6, name: 'João', rating: 100 },
+	{ id: 7, name: 'Leonardo', rating: 100 },
+	{ id: 8, name: 'Julia', rating: 100 },
+	{ id: 9, name: 'Henrique', rating: 100 },
+	{ id: 10, name: 'Daniel', rating: 100 },
+	{ id: 11, name: 'Victor', rating: 100 },
+	{ id: 12, name: 'Angela', rating: 100 },
+	{ id: 13, name: 'Fernando', rating: 100 },
+	{ id: 14, name: 'Harley', rating: 100 },
 	// Adicionar outros jogadores com seus IDs e nomes
 ];
 
 const gamesData = [
-	
+
 	{
 		dtRegister: 1690686000000,
 		players: [3, 1],
@@ -27,7 +27,7 @@ const gamesData = [
 			{ player0: 11, player1: 0 },
 		]
 	},
-	
+
 	{
 		dtRegister: 1690686000000,
 		players: [14, 13],
@@ -37,7 +37,7 @@ const gamesData = [
 			{ player0: 11, player1: 0 },
 		]
 	},
-	
+
 	{
 		dtRegister: 1690686000000,
 		players: [14, 3],
@@ -106,7 +106,7 @@ const gamesData = [
 			{ player0: 11, player1: 0 },
 		]
 	},
-		{
+	{
 		dtRegister: 1690686000000,
 		players: [7, 13],
 		sets: [
@@ -180,7 +180,7 @@ const gamesData = [
 
 
 
-	
+
 	{
 		dtRegister: 1690081200000,
 		players: [4, 9],
@@ -505,4 +505,4 @@ const gamesData = [
 			{ player0: 11, player1: 0 },
 		]
 	},
-	]
+]
