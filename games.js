@@ -1,22 +1,22 @@
 function calculateStats(playerId, gamesData) {
 	const player = users.find(user => user.id === playerId);
+	const opponent = users.find(user => user.id !== playerId);
 
 	if (!player) {
 		return null; // Jogador não encontrado, retorna null
 	}
 
-	const playerStats = gamesData.reduce((stats, game) => {
+	const macthStats = gamesData.reduce((stats, game) => {
 		const playerIndex = game.players.indexOf(playerId);
 
 		if (playerIndex !== -1) {
 			const setsWon = game.sets.filter(set => set[`player${playerIndex}`] > set[`player${1 - playerIndex}`]).length;
 			const setsLost = game.sets.length - setsWon;
-			const setDiff = Math.abs(setsWon - setsLost);
-			const isWin = setsWon > setsLost;
+
+
 			// calculateMatchStats(stats.rating,)
 
-			stats.rating +
-				stats.totalGames++;
+			stats.totalGames++;
 			stats.setsWon += setsWon;
 			stats.setsLost += setsLost;
 			stats.wins += setsWon > setsLost ? 1 : 0;
@@ -27,7 +27,7 @@ function calculateStats(playerId, gamesData) {
 	}, {
 		id: player.id,
 		name: player.name,
-		rating: pointsConfig.initialPoints,
+		rating: player.rating,
 		wins: 0,
 		losses: 0,
 		totalGames: 0,
@@ -35,14 +35,29 @@ function calculateStats(playerId, gamesData) {
 		setsLost: 0
 	});
 
-	const { initialPoints, winPoints, lossPoints } = pointsConfig;
-	const totalWinsPoints = playerStats.wins * winPoints;
-	const totalLossesPoints = playerStats.losses * lossPoints;
-	playerStats.points = totalWinsPoints - totalLossesPoints + initialPoints;
+	let playerStats = { ...macthStats };
+	playerStats.points = calculateBasicRanking(playerStats);
 	playerStats.setsRate = parseFloat((playerStats.setsWon / playerStats.totalGames).toFixed(2));
 	playerStats.winRate = parseFloat(((playerStats.wins / playerStats.totalGames) * 100).toFixed(2));
 
 	return playerStats;
+}
+
+function updateRatings() {
+	gamesData.forEach(game => {
+		const player0Id = game.players[0];
+		const player1Id = game.players[1];
+
+
+
+		calculateMatchStats(player0.ra)
+
+		game.players.forEach(player => {
+
+		})
+
+	})
+
 }
 
 
@@ -57,6 +72,7 @@ function calculateBasicRanking(playerStats) {
 const pointsConfig = {
 	initialPoints: 100, // Defina o valor inicial desejado aqui
 	winPoints: 10,
+	// lossPoints: 2
 	lossPoints: 2
 };
 
