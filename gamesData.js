@@ -14,10 +14,241 @@ const users = [
 	{ id: 13, name: 'Fernando', rating: 100 },
 	{ id: 14, name: 'Harley', rating: 100 },
 	{ id: 15, name: 'Marcelo', rating: 100 },
+	{ id: 16, name: 'Gabriel', rating: 100 },
+	{ id: 17, name: 'Diego', rating: 100 },
+	{ id: 18, name: 'Manfred', rating: 100 },
 	// Adicionar outros jogadores com seus IDs e nomes
 ];
 
 const gamesData = [
+	{
+		dtRegister: 1692500400000,
+		players: [9, 11],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [9, 15],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [2, 11],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [11, 15],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [5, 11],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [2, 5],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [2, 9],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [2, 15],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [5, 18],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [5, 9],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [5, 15],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [5, 12],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [2, 16],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [16, 11],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [16, 15],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [16, 9],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [16, 5],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [12, 15],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [17, 12],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [16, 12],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [9, 12],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [2, 12],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+		]
+	},
+	{
+		dtRegister: 1692500400000,
+		players: [11, 12],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+			{ player0: 0, player1: 11 },
+		]
+	},
 	{
 		dtRegister: 1691895600000,
 		players: [12, 9],
