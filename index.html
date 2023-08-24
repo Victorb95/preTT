@@ -10,6 +10,19 @@
 </head>
 
 <body>
+	<div id="registerGame">
+		<p>Registrar jogo</p>
+		<input type="date" id="gameDate">
+		<div>
+			<select class="player" id="player0"></select>
+			<select class="player" id="player1"></select>
+		</div>
+		<div>
+			<input type="number" id="player0Score">
+			<input type="number" id="player1Score">
+		</div>
+		<button id="btRegister">Registrar</button>
+	</div>
 	<div id="ttStats" class="ttStats"></div>
 	<div id="ttHistory" class="history">
 		<ol></ol>
@@ -17,6 +30,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/tabulator-tables@5.3.0/dist/js/tabulator.min.js"></script>
 	<script src="gamesData.js"></script>
 	<script src="games.js"></script>
+	<script src="register.js"></script>
 </body>
 
 </html>
