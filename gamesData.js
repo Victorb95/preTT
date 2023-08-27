@@ -306,17 +306,6 @@ const gamesData = [
 	},
 	{
 		dtRegister: 1692500400000,
-		players: [2, 5],
-		sets: [
-			{ player0: 11, player1: 0 },
-			{ player0: 11, player1: 0 },
-			{ player0: 11, player1: 0 },
-			{ player0: 0, player1: 11 },
-			{ player0: 0, player1: 11 },
-		]
-	},
-	{
-		dtRegister: 1692500400000,
 		players: [2, 9],
 		sets: [
 			{ player0: 11, player1: 0 },
