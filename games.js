@@ -133,7 +133,7 @@ function update() {
 				<div class='playerName'>${player1Name}</div>
 				<div class='playerSets'>${player1SetsWon}</div>	
 			</div>
-			<span id='close'>X</span>
+			<span id='close'></span>
 		</li>
 	`
 	});
