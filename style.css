@@ -45,6 +45,6 @@ body{
 	flex-direction: column;
 	gap: 10px;
 
-	
-	/* display: none; */
+
+	display: none;
  }
