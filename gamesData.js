@@ -18,10 +18,121 @@ const users = [
 	{ id: 17, name: 'Diego', rating: 100 },
 	{ id: 18, name: 'Manfred', rating: 100 },
 	{ id: 19, name: 'Davis', rating: 100 },
+	{ id: 20, name: 'Mariana', rating: 100 },
+	{ id: 21, name: 'Felipe', rating: 100 },
 	// Adicionar outros jogadores com seus IDs e nomes
 ];
 
+
 const gamesData = [
+	{
+		dtRegister: 1693105200000,
+		players: [21, 5],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1693105200000,
+		players: [21, 11],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+		]
+	},
+	{
+		dtRegister: 1693105200000,
+		players: [21, 17],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1693105200000,
+		players: [2, 11],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+		]
+	},
+	{
+		dtRegister: 1693105200000,
+		players: [12, 20],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+			{ player0: 0, player1: 11 }
+		]
+	},
+	{
+		dtRegister: 1693105200000,
+		players: [12, 11],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 },
+			{ player0: 0, player1: 11 }
+		]
+	},
+	{
+		dtRegister: 1693105200000,
+		players: [5, 12],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 }
+		]
+	},
+	{
+		dtRegister: 1693105200000,
+		players: [17, 5],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 }
+		]
+	},
+	{
+		dtRegister: 1693105200000,
+		players: [2, 12],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 }
+		]
+	},
+	{
+		dtRegister: 1693105200000,
+		players: [5, 11],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 0, player1: 11 }
+		]
+	},
+	{
+		dtRegister: 1693105200000,
+		players: [5, 20],
+		sets: [
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 },
+			{ player0: 11, player1: 0 }
+		]
+	},
 	{
 		dtRegister: 1693105200000,
 		players: [17, 12],
